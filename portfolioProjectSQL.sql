@@ -12,13 +12,13 @@ drop view if exists continentData
 
 select *
 from portfolioProject..covidDeaths
-order by 3,4 --colonnes correspondants à location et date
+order by 3,4 --colonnes correspondants Ã  location et date
 
 select *
 from portfolioProject.dbo.CovidVaccinations
 order by 3 desc,4 asc
 
---Selection des données à utiliser 
+--Selection des donnÃ©es Ã  utiliser 
 select location, date,total_cases, new_cases, total_deaths, population 
 from portfolioProject.dbo.covidDeaths
 order by 1,2
@@ -116,7 +116,6 @@ from popVac
 group by country, population
 order by country
 
-go
 -- total vaccination percentage vs population (using tem table)
 drop table  if exists #popVaccin --avoiding table already existing error 
 create table #popVaccin (country varchar(50) null, date datetime , population float, newVac float null, cumulVacc float null)
