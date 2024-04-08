@@ -42,7 +42,7 @@ from portfolioProject..covidDeaths
 where location= 'morocco'
 order by 1,2
 
--- countries with the highest inection rate compared to population
+-- countries with the highest infection rate compared to population
 select location, population, max(total_cases) as TheTotalcases ,  max(total_cases)/population*100  as infectionPercentage
 from portfolioProject..covidDeaths
 group by population, location 
